@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# WP-CLI inside Docker. Usage: ./bin/wp <command> [args]   e.g. ./bin/wp plugin list
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+tty_flag=()
+[ -t 0 ] && [ -t 1 ] || tty_flag=(-T)
+
+exec docker compose --progress quiet --profile tools run --rm --no-deps "${tty_flag[@]}" cli wp "$@"

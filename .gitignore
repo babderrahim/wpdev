@@ -1,0 +1,9 @@
+.env
+backups/*
+!backups/.gitkeep
+wp-content/themes/twentytwenty*
+wp-content/plugins/akismet
+wp-content/plugins/hello.php
+wp-content/debug.log
+.DS_Store
+.idea/
