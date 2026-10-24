@@ -1,9 +1,19 @@
 .env
 backups/*
 !backups/.gitkeep
-wp-content/themes/twentytwenty*
-wp-content/plugins/akismet
-wp-content/plugins/hello.php
+
+# Site code (restored or installed) is per-site, not part of this template.
+# To track a theme/plugin you develop here, add e.g.:  !wp-content/themes/my-theme/
+wp-content/themes/*
+!wp-content/themes/.gitkeep
+!wp-content/themes/index.php
+wp-content/plugins/*
+!wp-content/plugins/.gitkeep
+!wp-content/plugins/index.php
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/dev-http.php
+!wp-content/mu-plugins/mailpit.php
 wp-content/debug.log
+
 .DS_Store
 .idea/

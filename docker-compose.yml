@@ -76,6 +76,7 @@ services:
       - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
       - ./backups:/backups
       - ./docker/wp-setup.sh:/usr/local/bin/wp-setup.sh:ro
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/zz-dev.ini:ro
 
   mailpit:
     image: axllent/mailpit:latest

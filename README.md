@@ -43,6 +43,8 @@ make status
 
 `wp-content/themes`, `wp-content/plugins` and `wp-content/mu-plugins` are bind-mounted into the container, so edit them on the host. WordPress core, uploads and `debug.log` live in a Docker volume and are thrown away by `make destroy`.
 
+Everything in those folders is git-ignored except this repo's own dev mu-plugins, so restored or installed sites never end up in the template. To track a theme or plugin you're building, add an exception to `.gitignore`, e.g. `!wp-content/themes/my-theme/`.
+
 Apache and WP-CLI run as your host UID/GID (`HOST_UID`/`HOST_GID` in `.env`, filled in automatically), so files created by WordPress, such as plugins installed from wp-admin, stay owned by you.
 
 ## WP-CLI
